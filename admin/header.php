@@ -38,6 +38,14 @@ if(!isset($_SESSION['session_id'])){
 
     <![endif]-->
     <style>
+        @media only screen and (max-width: 500px) {
+            .mobile_show {
+                display: block !important;
+            }
+        }
+        .mobile_show {
+            display: none;
+        }
         .login {
             width: 300px;
         }
