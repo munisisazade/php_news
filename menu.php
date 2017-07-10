@@ -14,10 +14,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/index.php">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/about.php">About</a>
+                    <a href="/about-us/">About</a>
                 </li>
                 <?php
                     include("mysqli_connect.php");

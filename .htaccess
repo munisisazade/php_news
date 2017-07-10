@@ -1,7 +1,8 @@
 <IfModule mod_rewrite.c>
  RewriteEngine On
  #RewriteRule ^.*$ index.php
- #RewriteRule 
+ #RewriteRule
+ RewriteRule ^about-us/ about.php
  RewriteRule ^news/([^/]+)/? post.php?post_slug=$1 [L]
  RewriteRule ^page/([^/]+)/? flatpage.php?base_url=$1 [L]
  #RewriteCond %{REQUEST_FILENAME} !-f
