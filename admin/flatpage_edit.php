@@ -50,15 +50,16 @@
                 }
                 if ($uploadOk == 0) {
                     if ($_POST['id']) {
-                        global $user;
-                        $post_id = (int)$_POST['id'];
+                        $flat_id = (int) $_POST['id'];
+                        $url = $_POST['url'];
+                        $name = check_input($_POST['name']);
                         $title = check_input($_POST['title']);
                         $sub_title = check_input($_POST['sub_title']);
-                        $time = get_valid_datetime($_POST['date']);
-                        $author = (int) $user['id'];
-                        $text = $_POST['text'];
-                        $update_post = "UPDATE `flatpage` SET `title`='".$title."' , `sub_title`='".$sub_title."' , `author_id`='".$author."' , `publish_date`=FROM_UNIXTIME(" . $time . "), `text`='".$text."' WHERE `id`=".$post_id."";
-                        if ($mysqli->query($update_post)) {
+                        $text = stripslashes($_POST["text"]);
+
+                        $update_flat = "UPDATE `flatpage` SET `url`='".$url."' , `title`='".$title."' , `name`='".$name."' , `content`='".$text."' WHERE `id`=".$flat_id."";
+
+                        if ($mysqli->query($update_flat)) {
                             get_flat_list();
                         } else {
                             $handle_error = "Error: $mysqli->error";
