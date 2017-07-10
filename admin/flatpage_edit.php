@@ -68,6 +68,7 @@
                 }
 
                 else {
+                    global $target_file;
                     if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
                         // If Succesfuly image upload then
                         global $user;
