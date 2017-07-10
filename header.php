@@ -13,7 +13,7 @@
     <title>Blog post example PHP</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
