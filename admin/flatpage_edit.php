@@ -69,7 +69,7 @@
 
                 else {
                     global $target_file;
-                    if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
+                    if (move_uploaded_file(generateRandomString() . $_FILES["picture"]["tmp_name"], $target_file)) {
                         // If Succesfuly image upload then
                         global $user;
                         if ($_POST['id']) {
@@ -102,7 +102,7 @@
                                 $full_image_path = $save_target . basename($_FILES["picture"]["name"]);
                                 $text = stripslashes($_POST["text"]);
 
-                                $create_flat = "INSERT INTO `flatpage` (`url`,`title`,`image`,`sub_title`, `text`) VALUES ('" . $url . "','" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $text . "')";
+                                $create_flat = "INSERT INTO `flatpage` (`url`,`title`,`image`,`sub_title`, `content`) VALUES ('" . $url . "','" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $text . "')";
 
                                 if ($mysqli->query($create_flat)) {
                                     get_flat_list();
@@ -140,6 +140,15 @@
                 $data = strip_tags($data);
                 $data = htmlspecialchars($data);
                 return $data;
+            }
+            function generateRandomString($length = 10) {
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $charactersLength = strlen($characters);
+                $randomString = '';
+                for ($i = 0; $i < $length; $i++) {
+                    $randomString .= $characters[rand(0, $charactersLength - 1)];
+                }
+                return $randomString;
             }
             function check_url($url) {
                 if(strpos($url, '/') !== false) {
