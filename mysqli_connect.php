@@ -62,9 +62,9 @@
           `sites` VARCHAR (255) DEFAULT NULL,
            PRIMARY KEY (`id`))";
 
-        $aditionalflat = "ALTER TABLE  `sub_title` ADD `sub_title` VARCHAR (255) DEFAULT NULL ";
+        $aditionalflat = "ALTER TABLE  `flatpage` ADD `sub_title` VARCHAR (255) DEFAULT NULL ";
 
-        $aditionalflat_two = "ALTER TABLE  `sub_title` ADD `image` VARCHAR (255) DEFAULT NULL ";
+        $aditionalflat_two = "ALTER TABLE  `flatpage` ADD `image` VARCHAR (255) DEFAULT NULL ";
 
         if ($mysqli->query($aditionalflat) === TRUE) {
             echo "Successfuly update flatpage1 table";
