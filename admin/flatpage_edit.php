@@ -99,7 +99,7 @@
                                 $url = $_POST['url'];
                                 $title = check_input($_POST['title']);
                                 $sub_title = check_input($_POST['sub_title']);
-                                $full_image_path = $save_target . basename($_FILES["picture"]["name"]);
+                                $full_image_path = $save_target . generateRandomString() . basename($_FILES["picture"]["name"]);
                                 $text = stripslashes($_POST["text"]);
 
                                 $create_flat = "INSERT INTO `flatpage` (`url`,`title`,`image`,`sub_title`, `content`) VALUES ('" . $url . "','" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $text . "')";
