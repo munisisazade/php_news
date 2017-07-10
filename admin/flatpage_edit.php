@@ -15,7 +15,8 @@
                 else {
                     $target_dir = "../uploads/flatpage/";
                     $save_target = "uploads/flatpage/";
-                    $target_file = $target_dir . generateRandomString() . basename($_FILES["picture"]["name"]);
+                    $token = generateRandomString();
+                    $target_file = $target_dir . $token . basename($_FILES["picture"]["name"]);
                     $uploadOk = 1;
                     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
                     // Check if image file is a actual image or fake image
@@ -96,12 +97,12 @@
                         }
                         else {
                             if (check_url($_POST['url'])) {
-                                global $save_target;
+                                global $save_target, $token;
                                 $url = $_POST['url'];
                                 $name = check_input($_POST['name']);
                                 $title = check_input($_POST['title']);
                                 $sub_title = check_input($_POST['sub_title']);
-                                $full_image_path = $save_target . generateRandomString() . basename($_FILES["picture"]["name"]);
+                                $full_image_path = $save_target . $token . basename($_FILES["picture"]["name"]);
                                 $text = stripslashes($_POST["text"]);
 
                                 $create_flat = "INSERT INTO `flatpage` (`url`, `name`,`title`,`image`,`sub_title`, `content`) VALUES ('" . $url . "','" . $name . "','" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $text . "')";
