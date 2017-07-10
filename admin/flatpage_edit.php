@@ -13,8 +13,8 @@
                     $uploadOk = 0;
                 }
                 else {
-                    $target_dir = "../uploads/";
-                    $save_target = "uploads/";
+                    $target_dir = "../uploads/flatpage/";
+                    $save_target = "uploads/flatpage/";
                     $target_file = $target_dir . basename($_FILES["picture"]["name"]);
                     $uploadOk = 1;
                     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
@@ -57,7 +57,7 @@
                         $time = get_valid_datetime($_POST['date']);
                         $author = (int) $user['id'];
                         $text = $_POST['text'];
-                        $update_post = "UPDATE `article` SET `title`='".$title."' , `sub_title`='".$sub_title."' , `author_id`='".$author."' , `publish_date`=FROM_UNIXTIME(" . $time . "), `text`='".$text."' WHERE `id`=".$post_id."";
+                        $update_post = "UPDATE `flatpage` SET `title`='".$title."' , `sub_title`='".$sub_title."' , `author_id`='".$author."' , `publish_date`=FROM_UNIXTIME(" . $time . "), `text`='".$text."' WHERE `id`=".$post_id."";
                         if ($mysqli->query($update_post)) {
                             get_flat_list();
                         } else {
@@ -93,20 +93,24 @@
 //                            }
                         }
                         else {
-                            global $save_target;
-                            $title = check_input($_POST['title']);
-                            $sub_title = check_input($_POST['sub_title']);
-                            $full_image_path = $save_target . basename($_FILES["picture"]["name"]);
-                            $time = get_valid_datetime($_POST['date']);
-                            $author = (int)$user['id'];
-                            $text = stripslashes($_POST["text"]);
+                            if (check_url($_POST['url'])) {
+                                global $save_target;
+                                $url = $_POST['url'];
+                                $title = check_input($_POST['title']);
+                                $sub_title = check_input($_POST['sub_title']);
+                                $full_image_path = $save_target . basename($_FILES["picture"]["name"]);
+                                $text = stripslashes($_POST["text"]);
 
-                            $create_post = "INSERT INTO `article` (`title`,`image`,`sub_title`, `author_id`, `publish_date`, `text`) VALUES ('" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $author . "',FROM_UNIXTIME(" . $time . "),'" . $text . "')";
+                                $create_flat = "INSERT INTO `flatpage` (`url`,`title`,`image`,`sub_title`, `text`) VALUES ('" . $url . "','" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $text . "')";
 
-                            if ($mysqli->query($create_post)) {
-                                get_flat_list();
-                            } else {
-                                $handle_error = "Error: $mysqli->error";
+                                if ($mysqli->query($create_flat)) {
+                                    get_flat_list();
+                                } else {
+                                    $handle_error = "Error: $mysqli->error";
+                                }
+                            }
+                            else {
+                                $handle_error = "Please append slash url row";
                             }
                         }
                     } else {
@@ -135,6 +139,14 @@
                 $data = htmlspecialchars($data);
                 return $data;
             }
+            function check_url($url) {
+                if(strpos($url, '/') !== false) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
             function get_valid_datetime($var) {
                 if ($var) {
                     $final = (string) strtotime($var);
@@ -160,7 +172,7 @@
                 <form action=""  method="post" class="form-group" enctype="multipart/form-data">
                     <?php
                     if ($_GET['edit']) {
-                        $get_head = "SELECT * FROM `article` WHERE `id`=" . $_GET['edit'] . "";
+                        $get_head = "SELECT * FROM `flatpage` WHERE `id`=" . $_GET['edit'] . "";
                         $result = $mysqli->query($get_head);
                         foreach ($result as $key) {
                             echo '<input type="hidden" name="id" value="'.$_GET['edit'].'">
@@ -202,12 +214,12 @@
                         echo '
                     <div class="form-group">
                         <label for="exampleInputEmail1">Base Url</label>
-                        <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                        <input type="text" name="url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                         <small id="emailHelp" class="form-text text-muted">Example: \'/about/contact/\'. Make sure to have leading and trailing slashes.</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Title</label>
-                        <input type="text" name="sub_title"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                        <input type="text" name="title"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                         <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
