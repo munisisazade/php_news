@@ -8,6 +8,7 @@
             if ($_GET['edit']) {
                 $edit_title = "Edit flatpage";
             }
+            var_dump($_FILES['picture']);
             if(isset($_POST['change'])) {
                 if ($_FILES['picture']['size'] == 0) {
                     $uploadOk = 0;
