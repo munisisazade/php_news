@@ -203,7 +203,7 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Base Url</label>
                         <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-                        <small id="emailHelp" class="form-text text-muted"></small>
+                        <small id="emailHelp" class="form-text text-muted">Example: \'/about/contact/\'. Make sure to have leading and trailing slashes.</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Title</label>
