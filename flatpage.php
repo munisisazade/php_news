@@ -1,8 +1,8 @@
 <?php include("header.php"); ?>
 <?php include("menu.php");
-//    if($_GET['base_url']) {
-//
-//    }
+    if($_GET['base_url']) {
+        echo $_GET['base_url'];
+    }
 ?>
 
 <header class="intro-header" style="background-image: url('img/contact-bg.jpg')">
