@@ -68,12 +68,12 @@
 
         $aditionalflat_three = "ALTER TABLE  `flatpage` ADD `name` VARCHAR (255) DEFAULT NULL ";
 
-        if ($mysqli->query($aditionalflat_three) === TRUE) {
-            echo "Successfuly update flatpage1 table";
-        }
-        else {
-            echo "ERROR $mysqli->error";
-        }
+//        if ($mysqli->query($aditionalflat_three) === TRUE) {
+//            echo "Successfuly update flatpage1 table";
+//        }
+//        else {
+//            echo "ERROR $mysqli->error";
+//        }
 //        if ($mysqli->query($aditionalflat_two) === TRUE) {
 //            echo "Successfuly update flatpage2 table";
 //        }
