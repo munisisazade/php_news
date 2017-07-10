@@ -59,7 +59,7 @@
                         $text = $_POST['text'];
                         $update_post = "UPDATE `article` SET `title`='".$title."' , `sub_title`='".$sub_title."' , `author_id`='".$author."' , `publish_date`=FROM_UNIXTIME(" . $time . "), `text`='".$text."' WHERE `id`=".$post_id."";
                         if ($mysqli->query($update_post)) {
-                            get_news_list();
+                            get_flat_list();
                         } else {
                             $handle_error = "Error: $mysqli->error";
                         }
@@ -104,7 +104,7 @@
                             $create_post = "INSERT INTO `article` (`title`,`image`,`sub_title`, `author_id`, `publish_date`, `text`) VALUES ('" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $author . "',FROM_UNIXTIME(" . $time . "),'" . $text . "')";
 
                             if ($mysqli->query($create_post)) {
-                                get_news_list();
+                                get_flat_list();
                             } else {
                                 $handle_error = "Error: $mysqli->error";
                             }
@@ -149,8 +149,8 @@
                     return $final;
                 }
             }
-            function get_news_list() {
-                return header("Location: news_list.php");
+            function get_flat_list() {
+                return header("Location: flatpage_list.php");
             }
             ?>
 
@@ -201,9 +201,14 @@
                     else {
                         echo '
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label>
+                        <label for="exampleInputEmail1">Base Url</label>
                         <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-                        <small id="emailHelp" class="form-text text-muted"><?php echo $cur_error; ?></small>
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Title</label>
+                        <input type="text" name="sub_title"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                        <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Sub Title</label>
@@ -216,16 +221,7 @@
                         <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
-                        <div class=\'input-group date\' id=\'datetimepicker1\'>
-                            <input type=\'text\' name="date" class="form-control" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                    <script >$( document ).ready(function() {$(\'#datetimepicker1\').datetimepicker();});</script>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Text</label>
+                        <label for="exampleInputEmail1">Content</label>
                         <textarea name="text" id="ckeditor" class="form-control" cols="30" rows="10"></textarea>
                         <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
