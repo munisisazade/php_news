@@ -54,12 +54,20 @@
 
         $aditionalnews = "ALTER TABLE  `article` ADD `slug` VARCHAR (255) DEFAULT NULL";
 
-//        if ($mysqli->query($aditionalnews) === TRUE) {
-//            echo "Successfuly create article table";
-//        }
-//        else {
-//            echo "ERROR $mysqli->error";
-//        }
+        $flatpagemodel = "CREATE TABLE `flatpage` (
+          `id` INT(11) unsigned NOT NULL auto_increment,
+          `url` VARCHAR (255) DEFAULT NULL,
+          `title` VARCHAR (255) DEFAULT NULL,
+          `content` TEXT DEFAULT NULL,
+          `sites` VARCHAR (255) DEFAULT NULL,
+           PRIMARY KEY (`id`))";
+
+        if ($mysqli->query($flatpagemodel) === TRUE) {
+            echo "Successfuly create article table";
+        }
+        else {
+            echo "ERROR $mysqli->error";
+        }
 //
 //
 //        if ($mysqli->query($headertable) === TRUE) {
