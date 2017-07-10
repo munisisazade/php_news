@@ -27,11 +27,6 @@
                         $uploadOk = 0;
                     }
 
-                    // Check if file already exists
-                    if (file_exists($target_file)) {
-                        $handle_error = "Sorry, file already exists.";
-                        $uploadOk = 0;
-                    }
                     // Check file size
                     if ($_FILES["picture"]["size"] > 50000000) {
                         $handle_error = "Sorry, your file is too large.";
