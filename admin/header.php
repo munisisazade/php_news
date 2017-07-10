@@ -62,7 +62,7 @@ if(!isset($_SESSION['session_id'])){
                 <a class="nav-link" href="change_password.php">Change password</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/php_news/">View site</a>
+                <a class="nav-link" href="/">View site</a>
             </li>
 
             <li>
