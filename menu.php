@@ -19,6 +19,17 @@
                 <li>
                     <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/about.php">About</a>
                 </li>
+                <?php
+                    include("mysqli_connect.php");
+                    global $mysqli;
+                    $flatpage_query = "SELECT * FROM `flatpage`";
+                    $result = $mysqli->query($flatpage_query);
+                    foreach ($result as $item) {
+                        echo '<li>
+                                 <a href="/page'.$item['url'].'">'.$item['name'].'</a>
+                              </li>';
+                    }
+                ?>
                 <li>
                     <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/contact.php">Contact</a>
                 </li>
