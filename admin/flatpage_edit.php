@@ -15,7 +15,7 @@
                 else {
                     $target_dir = "../uploads/flatpage/";
                     $save_target = "uploads/flatpage/";
-                    $target_file = $target_dir . basename($_FILES["picture"]["name"]);
+                    $target_file = $target_dir . generateRandomString() . basename($_FILES["picture"]["name"]);
                     $uploadOk = 1;
                     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
                     // Check if image file is a actual image or fake image
@@ -69,7 +69,7 @@
 
                 else {
                     global $target_file;
-                    if (move_uploaded_file(generateRandomString() . $_FILES["picture"]["tmp_name"], $target_file)) {
+                    if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
                         // If Succesfuly image upload then
                         global $user;
                         if ($_POST['id']) {
