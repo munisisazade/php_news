@@ -61,9 +61,12 @@
 //        }
 //
 //
-//        if ($mysqli->query($usertable) === TRUE) {
+//        if ($mysqli->query($headertable) === TRUE) {
 //            echo "Successfuly create users table";
 //        }
+//        else {
+//            echo "Error ocured $mysqli->error";
+ //       }
 
     }
 ?>
