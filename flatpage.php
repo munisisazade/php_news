@@ -5,7 +5,7 @@
         global $mysqli;
         $base_url = check_input($_GET['base_url']);
 
-        $flat_query = "SELECT * FROM `flatpage` WHERE `url` LIKE '$".$base_url."%'";
+        $flat_query = "SELECT * FROM `flatpage` WHERE `url` LIKE '%".$base_url."%'";
 
         $result = $mysqli->query($flat_query);
         function get_data() {
