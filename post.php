@@ -1,32 +1,35 @@
-<?php include("header.php"); ?>
-<?php include("menu.php");
-    if($_GET['post_slug']) {
+<?php include("mysqli_connect.php") ?>;
+<?php
+if($_GET['post_slug']) {
 //        echo $_GET['post_id'];
-        $get_post = "SELECT * FROM `article` WHERE `slug`='".$_GET['post_slug']."'";
-        $result = $mysqli->query($get_post);
-        function get_data() {
-            global $result;
-            foreach ($result as $key) {
-                return $key;
-            }
-        };
-        function get_user_full_name($user) {
-            $id = (int) $user;
-            global $mysqli;
-            $author = "SELECT `name`,`surname` FROM `users` WHERE `id`=".$id."";
-            $author_result = $mysqli->query($author);
-            foreach ($author_result as $key) {
-                $name = $key['name']." ".$key['surname'];
-                return $name;
-            }
+    $get_post = "SELECT * FROM `article` WHERE `slug`='".$_GET['post_slug']."'";
+    $result = $mysqli->query($get_post);
+    function get_data() {
+        global $result;
+        foreach ($result as $key) {
+            return $key;
         }
-        $data = get_data();
-        $author_name = get_user_full_name($data['author_id']);
-
+    };
+    function get_user_full_name($user) {
+        $id = (int) $user;
+        global $mysqli;
+        $author = "SELECT `name`,`surname` FROM `users` WHERE `id`=".$id."";
+        $author_result = $mysqli->query($author);
+        foreach ($author_result as $key) {
+            $name = $key['name']." ".$key['surname'];
+            return $name;
+        }
     }
+    $data = get_data();
+    $author_name = get_user_full_name($data['author_id']);
 
-
+}
+$social_title = $data['title'];
+$social_desc = $data['sub_title'];
+$social_img = "http://" . $_SERVER['SERVER_NAME'] . "/" . $data['image'];
+include("header.php");
 ?>
+<?php include("menu.php"); ?>
 
 
 
