@@ -37,7 +37,7 @@ if($_GET['id']){
                             <tbody>';
                         foreach ($flat_result as $key) {
                             echo '<tr><td>' . $key['id'] . '</td>
-                                <td><img src="../'.$key['image'].'" alt="Flat page"></td>
+                                <td><img width="200px" src="../'.$key['image'].'" alt="Flat page"></td>
                                 <td>' . $key['url'] . '</td>
                                 <td>' . $key['title'] . '</td>
                                 <td><a href="flatpage_edit.php?edit='.$key['id'].'" class="btn btn-info">
