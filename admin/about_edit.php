@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <?php include("menu.php"); ?>
-            <?php
+            <?php ob_start();
             $edit_title = "Create about me";
             if ($_GET['edit']) {
                 $edit_title = "Edit about me";
@@ -61,7 +61,7 @@
                         $update_post = "UPDATE `about` SET `title`='".$title."' , `sub_title`='".$sub_title."' , `tw_link`='".$twitter."' , `fb_link`='" . $facebook . "',  `git_link`='".$github."', `text`='".$text."' WHERE `id`=".$about_id."";
 
                         if ($mysqli->query($update_post)) {
-                            $handle_error = "Successfuly Updated post";
+                            get_about_list();
                         } else {
                             $handle_error = "Error: $mysqli->error";
                         }
@@ -109,7 +109,7 @@
                             $create_about = "INSERT INTO `about` (`title`,`image`,`sub_title`, `text`, `tw_link`, `fb_link`, `git_link`) VALUES ('" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $text . "' ,'" . $twitter . "', '" . $facebook . "', '" . $github . "')";
 
                             if ($mysqli->query($create_about)) {
-                                $handle_error = "Successfuly created post";
+                                get_about_list();
                             } else {
                                 $handle_error = "Error: $mysqli->error";
                             }
@@ -154,8 +154,8 @@
                     return $final;
                 }
             }
-            function get_list() {
-                return header("Location: header_list.php");
+            function get_about_list() {
+                return header("Location: about_list.php");
             }
             ?>
 

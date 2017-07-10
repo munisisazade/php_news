@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <?php include("menu.php"); ?>
-            <?php
+            <?php ob_start();
             $edit_title = "New Article add";
             if ($_GET['edit']) {
                 $edit_title = "Edit Article";
@@ -59,7 +59,7 @@
                         $text = $_POST['text'];
                         $update_post = "UPDATE `article` SET `title`='".$title."' , `sub_title`='".$sub_title."' , `author_id`='".$author."' , `publish_date`=FROM_UNIXTIME(" . $time . "), `text`='".$text."' WHERE `id`=".$post_id."";
                         if ($mysqli->query($update_post)) {
-                            $handle_error = "Successfuly Updated post";
+                            get_news_list();
                         } else {
                             $handle_error = "Error: $mysqli->error";
                         }
@@ -79,12 +79,12 @@
                             $time = get_valid_datetime($_POST['date']);
                             $author = (int) $user['id'];
                             $text = check_input($_POST['text']);
-                            if ($_FILES['picture']){
-                                $handle_error = "var";
-                            }
-                            else {
-                                $handle_error = "yoxdu";
-                            }
+//                            if ($_FILES['picture']){
+//                                $handle_error = "var";
+//                            }
+//                            else {
+//                                $handle_error = "yoxdu";
+//                            }
 //                            $update_post = "UPDATE `article` SET `title`='".$title."' , `image`='".$full_image_path."' , `sub_title`='".$sub_title."' , `author_id`='".$author."' , `publish_date`=FROM_UNIXTIME(" . $time . "), `text`='".$text."' WHERE `id`=".$post_id."";
 //                            if ($mysqli->query($update_post)) {
 //                                $handle_error = "Successfuly created post";
@@ -104,7 +104,7 @@
                             $create_post = "INSERT INTO `article` (`title`,`image`,`sub_title`, `author_id`, `publish_date`, `text`) VALUES ('" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $author . "',FROM_UNIXTIME(" . $time . "),'" . $text . "')";
 
                             if ($mysqli->query($create_post)) {
-                                $handle_error = "Successfuly created post";
+                                get_news_list();
                             } else {
                                 $handle_error = "Error: $mysqli->error";
                             }
@@ -149,8 +149,8 @@
                     return $final;
                 }
             }
-            function get_list() {
-                return header("Location: header_list.php");
+            function get_news_list() {
+                return header("Location: news_list.php");
             }
             ?>
 
