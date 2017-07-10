@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 <?php include("menu.php"); ?>
     <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-        <h1>Welcome to Dashboard <?php global $user; echo $user['name'] . $user['surname']; ?></h1>
+        <h1>Welcome to Dashboard <?php global $user; echo $user['name'] . " " . $user['surname']; ?></h1>
         <ul class="nav nav-pills mobile_show flex-column">
             <li class="nav-item">
                 <a class="nav-link " href="header_list.php">Headers</a>
