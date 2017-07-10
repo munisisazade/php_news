@@ -32,6 +32,7 @@ if($_GET['id']){
                                 <th>#picture</th>
                                 <th>url</th>
                                 <th>name</th>
+                                <th>action</th>
                             </tr>
                             </thead>
                             <tbody>';
@@ -39,7 +40,7 @@ if($_GET['id']){
                             echo '<tr><td>' . $key['id'] . '</td>
                                 <td><img width="200px" src="../'.$key['image'].'" alt="Flat page"></td>
                                 <td>' . $key['url'] . '</td>
-                                <td>' . $key['title'] . '</td>
+                                <td>' . $key['name'] . '</td>
                                 <td><a href="flatpage_edit.php?edit='.$key['id'].'" class="btn btn-info">
                                         <span class="glyphicon glyphicon-edit"></span> Edit
                                     </a><a href="flatpage_list.php?id='.$key['id'].'" class="btn btn-danger">
