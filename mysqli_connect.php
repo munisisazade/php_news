@@ -52,13 +52,14 @@
           `message` TEXT DEFAULT NULL,
            PRIMARY KEY (`id`))";
 
+        $aditionalnews = "ALTER TABLE  `article` ADD `slug` VARCHAR (255) DEFAULT NULL";
 
-//        if ($mysqli->query($message) === TRUE) {
-//            echo "Successfuly create article table";
-//        }
-//        else {
-//            echo "ERROR $mysqli->error";
-//        }
+        if ($mysqli->query($aditionalnews) === TRUE) {
+            echo "Successfuly create article table";
+        }
+        else {
+            echo "ERROR $mysqli->error";
+        }
 //
 //
 //        if ($mysqli->query($headertable) === TRUE) {
