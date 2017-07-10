@@ -1,4 +1,4 @@
-<?php include("mysqli_connect.php") ?>;
+<?php include("mysqli_connect.php") ?>
 <?php
 if($_GET['post_slug']) {
 //        echo $_GET['post_id'];
