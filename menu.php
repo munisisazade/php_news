@@ -7,7 +7,7 @@
                 <span class="sr-only">Toggle navigation</span>
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/index.php">Blog website</a>
+            <a class="navbar-brand" href="/">Blog website</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,7 +31,7 @@
                     }
                 ?>
                 <li>
-                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/contact.php">Contact</a>
+                    <a href="/contact/">Contact</a>
                 </li>
             </ul>
         </div>

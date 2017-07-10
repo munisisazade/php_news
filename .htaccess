@@ -3,6 +3,7 @@
  #RewriteRule ^.*$ index.php
  #RewriteRule
  RewriteRule ^about-us/ about.php
+ RewriteRule ^contact/ contact.php
  RewriteRule ^news/([^/]+)/? post.php?post_slug=$1 [L]
  RewriteRule ^page/([^/]+)/? flatpage.php?base_url=$1 [L]
  #RewriteCond %{REQUEST_FILENAME} !-f
