@@ -62,12 +62,12 @@
           `sites` VARCHAR (255) DEFAULT NULL,
            PRIMARY KEY (`id`))";
 
-        if ($mysqli->query($flatpagemodel) === TRUE) {
-            echo "Successfuly create article table";
-        }
-        else {
-            echo "ERROR $mysqli->error";
-        }
+//        if ($mysqli->query($flatpagemodel) === TRUE) {
+//            echo "Successfuly create article table";
+//        }
+//        else {
+//            echo "ERROR $mysqli->error";
+//        }
 //
 //
 //        if ($mysqli->query($headertable) === TRUE) {
