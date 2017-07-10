@@ -26,12 +26,12 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Facebook share header -->
-    <meta property="og:title" content="<?php if($social_title) {echo $social_title;} else { echo 'Php news'}; ?>">
-    <meta property="og:description" content="<?php if($social_desc) {echo $social_desc;} else { echo 'news, php news'}; ?>">
+    <meta property="og:title" content="<?php if($social_title) {echo $social_title;} else { echo 'Php news';}; ?>">
+    <meta property="og:description" content="<?php if($social_desc) {echo $social_desc;} else { echo 'news, php news';}; ?>">
 
 
-    <meta property="og:image" content="<?php if($social_img) {echo $social_img;} else { echo 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/500px-PHP-logo.svg.png'}; ?>">
-    <meta name="twitter:image" content="<?php if($social_img) {echo $social_img;} else { echo 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/500px-PHP-logo.svg.png'}; ?>">
+    <meta property="og:image" content="<?php if($social_img) {echo $social_img;} else { echo 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/500px-PHP-logo.svg.png';}; ?>">
+    <meta name="twitter:image" content="<?php if($social_img) {echo $social_img;} else { echo 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/500px-PHP-logo.svg.png';}; ?>">
     <meta property="og:url" content="<?php echo 'http://'. $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>">
 
     <!--Twitter header-->
