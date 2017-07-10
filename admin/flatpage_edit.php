@@ -196,17 +196,17 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name</label>
-                                        <input type="name" name="sub_title" value="'.$key['name'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <input type="text" name="name" value="'.$key['name'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Title</label>
-                                        <input type="title" name="sub_title" value="'.$key['title'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <input type="text" name="title" value="'.$key['title'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Sub title</label>
-                                        <input type="sub_title" name="sub_title" value="'.$key['sub_title'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <input type="text" name="sub_title" value="'.$key['sub_title'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
