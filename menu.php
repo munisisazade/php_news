@@ -7,20 +7,20 @@
                 <span class="sr-only">Toggle navigation</span>
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="index.php">Blog website</a>
+            <a class="navbar-brand" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/index.php">Blog website</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="index.php">Home</a>
+                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/index.php">Home</a>
                 </li>
                 <li>
-                    <a href="about.php">About</a>
+                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/about.php">About</a>
                 </li>
                 <li>
-                    <a href="contact.php">Contact</a>
+                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/contact.php">Contact</a>
                 </li>
             </ul>
         </div>
