@@ -2,8 +2,7 @@
 <?php include("menu.php");
     if($_GET['post_slug']) {
 //        echo $_GET['post_id'];
-        $get_post = "SELECT * FROM `article` WHERE `slug`=".$_GET['post_slug']."";
-        var_dump($get_post);
+        $get_post = "SELECT * FROM `article` WHERE `slug`='".$_GET['post_slug']."'";
         $result = $mysqli->query($get_post);
         function get_data() {
             global $result;
