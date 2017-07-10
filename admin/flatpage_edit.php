@@ -23,25 +23,25 @@
                     if ($check !== false) {
                         $uploadOk = 1;
                     } else {
-                        $handle_error = "File is not an image.";
+                        echo "File is not an image.";
                         $uploadOk = 0;
                     }
 
                     // Check if file already exists
                     if (file_exists($target_file)) {
-                        $handle_error = "Sorry, file already exists.";
+                        echo "Sorry, file already exists.";
                         $uploadOk = 0;
                     }
                     // Check file size
                     if ($_FILES["picture"]["size"] > 50000000) {
-                        $handle_error = "Sorry, your file is too large.";
+                        echo "Sorry, your file is too large.";
                         $uploadOk = 0;
                     }
                     // Allow certain file formats
                     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
                         && $imageFileType != "gif"
                     ) {
-                        $handle_error = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                         $uploadOk = 0;
                     }
                     // Check if $uploadOk is set to 0 by an error
@@ -115,6 +115,7 @@
                             }
                         }
                     } else {
+
                         $handle_error = "Sorry, there was an error uploading your file.";
                     }
                 }
