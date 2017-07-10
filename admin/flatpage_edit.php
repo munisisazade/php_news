@@ -98,7 +98,7 @@
                             if (check_url($_POST['url'])) {
                                 global $save_target;
                                 $url = $_POST['url'];
-                                $name = $_POST['name'];
+                                $name = check_input($_POST['name']);
                                 $title = check_input($_POST['title']);
                                 $sub_title = check_input($_POST['sub_title']);
                                 $full_image_path = $save_target . generateRandomString() . basename($_FILES["picture"]["name"]);
