@@ -62,12 +62,16 @@
           `sites` VARCHAR (255) DEFAULT NULL,
            PRIMARY KEY (`id`))";
 
-//        if ($mysqli->query($flatpagemodel) === TRUE) {
-//            echo "Successfuly create article table";
-//        }
-//        else {
-//            echo "ERROR $mysqli->error";
-//        }
+        $aditionalflat = "ALTER TABLE  `sub_title` 
+          ADD (`sub_title` VARCHAR (255) DEFAULT NULL,
+          `image` VARCHAR (255) DEFAULT NULL,)";
+
+        if ($mysqli->query($aditionalflat) === TRUE) {
+            echo "Successfuly create article table";
+        }
+        else {
+            echo "ERROR $mysqli->error";
+        }
 //
 //
 //        if ($mysqli->query($headertable) === TRUE) {

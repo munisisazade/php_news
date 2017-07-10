@@ -7,6 +7,9 @@
             <a class="nav-link <?php echo $news_class ?>" href="news_list.php">News</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link <?php echo $flat_class ?>" href="flatpage_list.php">Flatpages</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link <?php echo $about_me ?>" href="about_list.php">About me</a>
         </li>
         <li class="nav-item">
