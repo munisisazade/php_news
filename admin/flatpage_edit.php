@@ -97,12 +97,13 @@
                             if (check_url($_POST['url'])) {
                                 global $save_target;
                                 $url = $_POST['url'];
+                                $name = $_POST['name'];
                                 $title = check_input($_POST['title']);
                                 $sub_title = check_input($_POST['sub_title']);
                                 $full_image_path = $save_target . generateRandomString() . basename($_FILES["picture"]["name"]);
                                 $text = stripslashes($_POST["text"]);
 
-                                $create_flat = "INSERT INTO `flatpage` (`url`,`title`,`image`,`sub_title`, `content`) VALUES ('" . $url . "','" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $text . "')";
+                                $create_flat = "INSERT INTO `flatpage` (`url`, `name`,`title`,`image`,`sub_title`, `content`) VALUES ('" . $url . "','" . $name . "','" . $title . "','" . $full_image_path . "','" . $sub_title . "','" . $text . "')";
 
                                 if ($mysqli->query($create_flat)) {
                                     get_flat_list();
@@ -188,13 +189,23 @@
                         foreach ($result as $key) {
                             echo '<input type="hidden" name="id" value="'.$_GET['edit'].'">
                                   <div class="form-group">
-                                        <label for="exampleInputEmail1">Title</label>
-                                        <input type="text" name="title" value="'.$key['title'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-                                        <small id="emailHelp" class="form-text text-muted"><?php echo $cur_error; ?></small>
+                                        <label for="exampleInputEmail1">Base url</label>
+                                        <input type="text" name="url" value="'.$key['url'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Sub Title</label>
-                                        <input type="text" name="sub_title" value="'.$key['sub_title'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <label for="exampleInputEmail1">Name</label>
+                                        <input type="name" name="sub_title" value="'.$key['name'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Title</label>
+                                        <input type="title" name="sub_title" value="'.$key['title'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Sub title</label>
+                                        <input type="sub_title" name="sub_title" value="'.$key['sub_title'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="form-group">
@@ -203,17 +214,8 @@
                                         <small id="emailHelp" class="form-text text-muted">Current cover_picture : <a href="'.$key['image'].'">'.$key['image'].'</a></small>
                                     </div>
                                     <div class="form-group">
-                                        <div class=\'input-group date\' id=\'datetimepicker1\'>
-                                            <input type=\'text\' value="'.$key['publish_date'].'" name="date" class="form-control" />
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <script >$( document ).ready(function() {$(\'#datetimepicker1\').datetimepicker(defaultDate: new Date('.$key['publish_date'].') , sideBySide: true);});</script>
-                                    <div class="form-group">
                                         <label for="exampleInputEmail1">Text</label>
-                                        <textarea name="text" id="ckeditor" class="form-control" cols="30" rows="10">'.$key['text'].'</textarea>
+                                        <textarea name="text" id="ckeditor" class="form-control" cols="30" rows="10">'.$key['content'].'</textarea>
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>
                                      <script >
@@ -227,6 +229,11 @@
                         <label for="exampleInputEmail1">Base Url</label>
                         <input type="text" name="url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                         <small id="emailHelp" class="form-text text-muted">Example: \'/about/contact/\'. Make sure to have leading and trailing slashes.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" name="name"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                        <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Title</label>
