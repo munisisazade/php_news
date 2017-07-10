@@ -47,7 +47,7 @@
                     foreach ($news_result as $item) {
                         echo '
                           <div class="post-preview">
-                                <a href="post.php?post_id='.$item['id'].'&csrftoken=Wt9eeWt9eeJop5Vb3OJop5VWtWt9eeJop5Vb3O9eeJWt9eeJop5Wt9eeJop5Vb3OVb3Oop5Vb3Ob3OmeNTvWt9eeJop5Vb3Oogegckm1pVM5MD">
+                                <a href="/news/'.$item['slug']."/".$item['publish_date']."/".'>
                                     <h2 class="post-title">'.$item['title'].'</h2>
                                     <h3 class="post-subtitle">'.$item['sub_title'].'</h3>
                                 </a>
