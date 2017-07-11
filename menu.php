@@ -16,11 +16,11 @@
                 <li class='dropdown'>
                     <a data-toggle="dropdown">Language
                         <span class="caret"></span>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">az</a></li>
-                            <li><a href="#">en</a></li>
-                        </ul>
-                     </a>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">az</a></li>
+                        <li><a href="#">en</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="/"><?php echo $language->getMenuTitle(); ?></a>
