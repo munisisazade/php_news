@@ -8,9 +8,6 @@
         global $social_title, $social_desc, $social_img;
         $lang =  substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         $language = New Language($lang);
-        $langArray = array();
-        $langArray =  $language->getPageTitle();
-        var_dump($langArray);
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="Munis Isazade">
 
-    <title>Blog post example PHP</title>
+    <title><?php echo $language->getPageTitle(); ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

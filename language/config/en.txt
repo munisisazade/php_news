@@ -1,3 +1,4 @@
+WEBSITE_TITLE=Blog post example PHP
 WEBSITE_NAME=Blog website
 MENU_TITLE=Home
 MENU_ABOUT=About
