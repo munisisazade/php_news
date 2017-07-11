@@ -8,8 +8,6 @@
         global $social_title, $social_desc, $social_img;
         $lang =  substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         $language = New Language($lang);
-        $language = $this->userLanguage();
-        $langArray = array();
         $langArray =  $language->getPageTitle();
         var_dump($langArray);
 
