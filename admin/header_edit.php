@@ -80,21 +80,17 @@
                 <h1><?php echo $edit_title ?></h1>
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">profile</a>
+                        <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">English</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">buzz</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#references" role="tab" data-toggle="tab">references</a>
+                        <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Azərbaycan</a>
                     </li>
                 </ul>
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active show" id="profile" aria-expanded="true">asdasd</div>
-                    <div role="tabpanel" class="tab-pane fade" id="buzz">bbb</div>
-                    <div role="tabpanel" class="tab-pane fade" id="references">ccc</div>
+                    <div role="tabpanel" class="tab-pane fade in active show" id="profile" aria-expanded="true">Cool</div>
+                    <div role="tabpanel" class="tab-pane fade" id="buzz">Zor</div>
                 </div>
                 <form action=""  method="post" class="form-group">
                 <?php
