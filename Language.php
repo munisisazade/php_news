@@ -29,7 +29,7 @@ class Language
 
     public function getPageTitle()
     {
-        return $this->languageArray['PAGE_TITLE'];
+        return $this->languageArray['WEBSITE_NAME'];
     }
 }
 ?>
