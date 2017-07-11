@@ -19,10 +19,10 @@ class Language
 
     private function userLanguage()
     {
-        $file = 'language/config/' . $this->userLanguage . '.txt';
+        $file = $_SERVER['DOCUMENT_ROOT'] . '/language/config/' . $this->userLanguage . '.txt';
         if(!file_exists($file))
         {
-            echo "File not exsist";
+            echo "File not exist";
         }
         $fh = fopen($file, 'r');
         $theData = fread($fh, filesize($file));
