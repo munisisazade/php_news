@@ -22,7 +22,7 @@ class Language
         $file = 'language/config/' . $this->userLanguage . '.ini';
         if(!file_exists($file))
         {
-            //Handle Error
+            echo "File not exsist";
         }
         return parse_ini_file($file);
     }
