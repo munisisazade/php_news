@@ -78,11 +78,11 @@
                 width: 100% !important;
             }
         }
-        .bg-transparent:active , .bg-transparent:hover {
-            background: transparent;
+        .bg-transparent, .bg-transparent:active , .bg-transparent:hover {
+            background: transparent !important;
         }
         .dropdown-menu {
-            background: rgb(255, 255, 255);
+            background: rgb(255, 255, 255) !important;
         }
     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
