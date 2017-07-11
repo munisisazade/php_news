@@ -8,7 +8,6 @@
         global $social_title, $social_desc, $social_img;
         session_start();
         $available_langs = array('en','az');
-        $_SESSION['lang'] = 'az';
         if(empty($_SESSION['lang'])) {
             $_SESSION['lang'] = 'en';
         }
