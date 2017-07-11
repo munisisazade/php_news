@@ -80,25 +80,23 @@
                 <h1><?php echo $edit_title ?></h1>
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">English</a>
+                        <a class="nav-link active" href="#english" role="tab" data-toggle="tab">English</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Azərbaycan</a>
+                        <a class="nav-link" href="#azeri" role="tab" data-toggle="tab">Azərbaycan</a>
                     </li>
                 </ul>
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active show" id="profile" aria-expanded="true">Cool</div>
-                    <div role="tabpanel" class="tab-pane fade" id="buzz">Zor</div>
-                </div>
-                <form action=""  method="post" class="form-group">
-                <?php
-                    if ($_GET['edit']) {
-                        $get_head = "SELECT * FROM `header` WHERE `id`=" . $_GET['edit'] . "";
-                        $result = $mysqli->query($get_head);
-                        foreach ($result as $key) {
-                                echo '<input type="hidden" name="id" value="'.$_GET['edit'].'">
+                    <div role="tabpanel" class="tab-pane fade in active show" id="english" aria-expanded="true">
+                        <form action=""  method="post" class="form-group">
+                            <?php
+                            if ($_GET['edit']) {
+                                $get_head = "SELECT * FROM `header` WHERE `id`=" . $_GET['edit'] . "";
+                                $result = $mysqli->query($get_head);
+                                foreach ($result as $key) {
+                                    echo '<input type="hidden" name="id" value="'.$_GET['edit'].'">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">name</label>
                                         <input type="text" name="name" value="'.$key['name'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  >
@@ -109,27 +107,70 @@
                                         <input type="text" name="text" value="'.$key['text'].'"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  >
                                         <small id="emailHelp" class="form-text text-muted"></small>
                                     </div>';
-                        };
-                    }
-                    else {
-                        echo '
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">name</label>
-                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-                        <small id="emailHelp" class="form-text text-muted"><?php echo $cur_error; ?></small>
+                                };
+                            }
+                            else {
+                                echo '
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">name</label>
+                                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <small id="emailHelp" class="form-text text-muted"><?php echo $cur_error; ?></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">text</label>
+                                        <input type="text" name="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>';
+                                }
+                                ?>
+
+
+
+                            <input type="submit" name="change" class="btn btn-success">
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">text</label>
-                        <input type="text" name="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-                        <small id="emailHelp" class="form-text text-muted"></small>
-                    </div>';
-                    }
-                ?>
+                    <div role="tabpanel" class="tab-pane fade" id="azeri">
+                        <form action=""  method="post" class="form-group">
+                            <?php
+                            if ($_GET['edit']) {
+                                $get_head = "SELECT * FROM `header` WHERE `id`=" . $_GET['edit'] . "";
+                                $result = $mysqli->query($get_head);
+                                foreach ($result as $key) {
+                                    echo '<input type="hidden" name="id" value="'.$_GET['edit'].'">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Ad</label>
+                                        <input type="text" name="name" value="'.$key['name'].'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  >
+                                        <small id="emailHelp" class="form-text text-muted"><?php echo $cur_error; ?></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Sub text</label>
+                                        <input type="text" name="text" value="'.$key['text'].'"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  >
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>';
+                                };
+                            }
+                            else {
+                                echo '
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Ad</label>
+                                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <small id="emailHelp" class="form-text text-muted"><?php echo $cur_error; ?></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Sub text</label>
+                                        <input type="text" name="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>';
+                            }
+                            ?>
 
 
 
-                    <input type="submit" name="change" class="btn btn-success">
-                </form>
+                            <input type="submit" name="change" class="btn btn-success">
+                        </form>
+                    </div>
+                </div>
+
 
 
             </main>
