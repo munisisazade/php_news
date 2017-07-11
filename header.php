@@ -9,7 +9,7 @@
         $lang =  substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         $language = New Language($lang);
         $langArray = array();
-        $langArray =  $language->getPageTitle();
+        $langArray =  $language->userLanguage();
         var_dump($langArray);
 
     ?>
