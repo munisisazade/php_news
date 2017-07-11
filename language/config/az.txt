@@ -1,0 +1,15 @@
+WEBSITE_TITLE=Blog post nümunəsi PHP də
+WEBSITE_NAME=Blog səhifəsi
+MENU_TITLE=Ana səhifə
+MENU_ABOUT=Haqqımızda
+CONTACT=Kontakt
+AUTHOR=Müəllif
+COPYRIGHT=Müəllif hüququları qorunur © Mənim Veb səhifəm
+CONTACT_TITLE=Mənə müraciət edin
+CONTACT_SUBTITLE=Suallarınız varmı? Cavabım var (bəlkə).
+CONTACT_TEXT=Mənimlə əlaqə saxlamağı istəyirsiniz? Mənə bir mesaj göndərmək üçün aşağıdakı formu doldurun və 24 saat ərzində sizə geri dönməyə çalışacağam!
+CONTACT_NAME=Ad
+CONTACT_EMAIL=Elektron poçt
+CONTACT_PHONE=Telefon nömrəsi
+CONTACT_MESSAGE=Mesaj
+CONTACT_SEND=Göndər

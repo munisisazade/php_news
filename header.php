@@ -6,8 +6,17 @@
     <?php
         include("Language.php");
         global $social_title, $social_desc, $social_img;
-        $lang =  substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-        $language = New Language($lang);
+        session_start();
+        $available_langs = array('en','az');
+        $_SESSION['lang'] = 'en';
+        if(isset($_GET['lang']) && $_GET['lang'] != ''){
+            // check if the language is one we support
+            if(in_array($_GET['lang'], $available_langs))
+            {
+                $_SESSION['lang'] = $_GET['lang']; // Set session
+            }
+        }
+        $language = New Language($_SESSION['lang']);
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
