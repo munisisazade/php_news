@@ -51,7 +51,7 @@
                                     <h2 class="post-title">'.$item['title'].'</h2>
                                     <h3 class="post-subtitle">'.$item['sub_title'].'</h3>
                                 </a>
-                                <p class="post-meta">Posted by <a href="#">'.get_user_full_name($item['author_id']).'</a> on '.date('F j Y', strtotime($item['publish_date'])).'</p>
+                                <p class="post-meta">'.$language->getAuthor().' <a href="#">'.get_user_full_name($item['author_id']).'</a> on '.date('F j Y', strtotime($item['publish_date'])).'</p>
                             </div>
                             <hr>
                         ';

@@ -42,7 +42,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <p class="copyright text-muted">Copyright &copy; My Website <?php $time = time();$check = $time+date("Z",$time);echo strftime("%Y", $check); ?></p>
+                        <p class="copyright text-muted"><?php echo $language->getCopyright(); ?> <?php $time = time();$check = $time+date("Z",$time);echo strftime("%Y", $check); ?></p>
                     </div>
                 </div>
             </div>
