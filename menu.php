@@ -14,12 +14,12 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class='dropdown'>
-                    <a data-toggle="dropdown">Language
+                    <a class="bg-trns" data-toggle="dropdown">Language
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">az</a></li>
-                        <li><a href="#">en</a></li>
+                        <li><a href="?lang=az">az</a></li>
+                        <li><a href="?lang=en">en</a></li>
                     </ul>
                 </li>
                 <li>
