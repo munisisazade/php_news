@@ -79,7 +79,7 @@
             }
         }
         .bg-transparent, .bg-transparent:active , .bg-transparent:hover {
-            color : #fff !important;
+            color: #fff;
             background: transparent !important;
         }
         .dropdown-menu {
