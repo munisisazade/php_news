@@ -11,6 +11,7 @@
         $ini = file_get_contents($file);
         $language = parse_ini_file($ini);
 //        $langArray =  $language->getPageTitle();
+        var_dump($ini);
         var_dump($file);
         var_dump($_SERVER['DOCUMENT_ROOT']);
         var_dump($language);
