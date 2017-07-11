@@ -6,7 +6,9 @@
     <?php
         global $social_title, $social_desc, $social_img;
         $lang =  substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-        echo $lang;
+        $language = New Language($lang);
+        var_dump($language);
+
     ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
