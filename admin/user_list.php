@@ -1,5 +1,5 @@
 <?php
-$user_result_class='active';
+$user_class='active';
 include("header.php") ?>
 <?php
 global $mysqli;

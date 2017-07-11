@@ -74,3 +74,4 @@
 
 </head>
 <body>
+<form action="" enctype="multipart/form-data"></form>
