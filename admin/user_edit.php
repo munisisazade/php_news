@@ -86,7 +86,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">surname</label>
-                        <input type="text" name="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                        <input type="text" name="surname"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                         <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
