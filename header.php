@@ -8,13 +8,23 @@
         global $social_title, $social_desc, $social_img;
         $lang =  substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         $file = $_SERVER['DOCUMENT_ROOT'] . '/language/config/en.ini';
-        $ini = file_get_contents($file);
-        $language = parse_ini_file($ini,true);
-//        $langArray =  $language->getPageTitle();
-        var_dump($ini);
-        var_dump($file);
-        var_dump($_SERVER['DOCUMENT_ROOT']);
-        print_r($language);
+//        $ini = file_get_contents($file);
+//        $language = parse_ini_file($ini,true);
+////        $langArray =  $language->getPageTitle();
+//        var_dump($ini);
+//        var_dump($file);
+//        var_dump($_SERVER['DOCUMENT_ROOT']);
+        $fh = fopen($file, 'r');
+        $theData = fread($fh, filesize($file));
+        $assoc_array = array();
+        $my_array = explode("\n", $theData);
+        foreach($my_array as $line)
+        {
+            $tmp = explode("=", $line);
+            $assoc_array[$tmp[0]] = "$tmp[1]";
+        }
+        fclose($fh);
+        var_dump($assoc_array);
 
     ?>
     <meta charset="utf-8">

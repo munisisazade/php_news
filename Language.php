@@ -19,12 +19,22 @@ class Language
 
     private function userLanguage()
     {
-        $file = 'language/config/' . $this->userLanguage . '.ini';
+        $file = 'language/config/' . $this->userLanguage . '.txt';
         if(!file_exists($file))
         {
             echo "File not exsist";
         }
-        return parse_ini_file($file);
+        $fh = fopen($file, 'r');
+        $theData = fread($fh, filesize($file));
+        $assoc_array = array();
+        $my_array = explode("\n", $theData);
+        foreach($my_array as $line)
+        {
+            $tmp = explode("=", $line);
+            $assoc_array[$tmp[0]] = "$tmp[1]";
+        }
+        fclose($fh);
+        return $assoc_array;
     }
 
     public function getPageTitle()
