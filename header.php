@@ -8,7 +8,9 @@
         global $social_title, $social_desc, $social_img;
         session_start();
         $available_langs = array('en','az');
-        $_SESSION['lang'] = 'en';
+        if(empty($_SESSION['lang'])) {
+            $_SESSION['lang'] = 'en';
+        }
         if(isset($_GET['lang']) && $_GET['lang'] != ''){
             // check if the language is one we support
             if(in_array($_GET['lang'], $available_langs))
