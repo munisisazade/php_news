@@ -37,9 +37,9 @@ class Language
         return $assoc_array;
     }
 
-    public function getPageTitle()
+    public function getWebsiteTitle()
     {
-        return $this->languageArray['WEBSITE_NAME'];
+        return $this->languageArray['WEBSITE_TITLE'];
     }
 }
 ?>

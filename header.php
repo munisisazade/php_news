@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="Munis Isazade">
 
-    <title><?php echo $language->getPageTitle(); ?></title>
+    <title><?php echo $language->getWebsiteTitle(); ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
