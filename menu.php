@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class='dropdown'>
-                    <a class="bg-trns" data-toggle="dropdown">Language
+                    <a class="bg-trns bg-transparent" data-toggle="dropdown">Language
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
