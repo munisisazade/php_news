@@ -7,10 +7,12 @@
         include("Language.php");
         global $social_title, $social_desc, $social_img;
         $lang =  substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-        $file = '/language/config/en.ini';
+        $file = $_SERVER['DOCUMENT_ROOT'] . 'language/config/en.ini';
         $ini = file_get_contents($file);
         $language = parse_ini_file($ini);
 //        $langArray =  $language->getPageTitle();
+        var_dump($file);
+        var_dump($_SERVER['DOCUMENT_ROOT']);
         var_dump($language);
 
     ?>
