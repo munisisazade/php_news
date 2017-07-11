@@ -14,7 +14,7 @@
         var_dump($ini);
         var_dump($file);
         var_dump($_SERVER['DOCUMENT_ROOT']);
-        var_dump($language);
+        print_r(parse_ini_file($language));
 
     ?>
     <meta charset="utf-8">
