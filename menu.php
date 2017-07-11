@@ -13,13 +13,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><div href="" data-toggle="dropdown">Language
+                <li><a href="" data-toggle="dropdown">Language
                         <span class="caret"></span>
                         <ul class="dropdown-menu">
                             <li><a href="#">az</a></li>
                             <li><a href="#">en</a></li>
                         </ul>
-                    </div>
+                    </a>
                 </li>
                 <li>
                     <a href="/"><?php echo $language->getMenuTitle(); ?></a>
