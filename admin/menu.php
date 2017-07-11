@@ -1,6 +1,9 @@
 <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
     <ul class="nav nav-pills flex-column">
         <li class="nav-item">
+            <a class="nav-link <?php echo $user_class ?>" href="user_list.php">Users</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link <?php echo $head_class ?>" href="header_list.php">Headers</a>
         </li>
         <li class="nav-item">

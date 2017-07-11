@@ -4,6 +4,9 @@
         <h1>Welcome to Dashboard <?php global $user; echo $user['name'] . " " . $user['surname']; ?></h1>
         <ul class="nav nav-pills mobile_show flex-column">
             <li class="nav-item">
+                <a class="nav-link " href="user_list.php">Users</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link " href="header_list.php">Headers</a>
             </li>
             <li class="nav-item">
