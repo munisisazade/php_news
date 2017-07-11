@@ -11,7 +11,7 @@ global $mysqli;
         <?php include("menu.php"); ?>
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
             <h1>Admin list</h1>
-            <a href="header_edit.php">
+            <a href="user_edit.php">
                 <button class="btn btn-success">New</button></a>
             <div class="table-responsive">
                 <table class="table table-striped">
