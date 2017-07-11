@@ -166,7 +166,7 @@
 
 
 
-                            <input type="submit" name="change" class="btn btn-success">
+                            <input type="submit" value="Yadda saxla" name="change" class="btn btn-success">
                         </form>
                     </div>
                 </div>
