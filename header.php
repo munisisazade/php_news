@@ -9,7 +9,7 @@
         $lang =  substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         $file = $_SERVER['DOCUMENT_ROOT'] . '/language/config/en.ini';
         $ini = file_get_contents($file);
-        $language = parse_ini_file($ini);
+        $language = parse_ini_file($ini,true);
 //        $langArray =  $language->getPageTitle();
         var_dump($ini);
         var_dump($file);
