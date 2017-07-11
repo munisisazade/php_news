@@ -9,7 +9,7 @@
         $lang =  substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         $file = 'language/config/en.ini';
         echo fileperms($_SERVER['DOCUMENT_ROOT'] . "/language/config/en.ini");
-        var_dump(fileperms($_SERVER['DOCUMENT_ROOT'] . "/language/config/en.ini");
+        var_dump(fileperms($_SERVER['DOCUMENT_ROOT'] . "/language/config/en.ini"));
         $language = parse_ini_file($file);
 //        $langArray =  $language->getPageTitle();
         var_dump($language);
