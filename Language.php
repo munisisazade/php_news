@@ -41,5 +41,75 @@ class Language
     {
         return $this->languageArray['WEBSITE_TITLE'];
     }
+
+    public function getWebsiteName()
+    {
+        return $this->languageArray['WEBSITE_NAME'];
+    }
+
+    public function getMenuTitle()
+    {
+        return $this->languageArray['MENU_TITLE'];
+    }
+
+    public function getMenuAbout()
+    {
+        return $this->languageArray['MENU_ABOUT'];
+    }
+
+    public function getContact()
+    {
+        return $this->languageArray['CONTACT'];
+    }
+
+    public function getAuthor()
+    {
+        return $this->languageArray['AUTHOR'];
+    }
+
+    public function getCopyright()
+    {
+        return $this->languageArray['COPYRIGHT'];
+    }
+
+    public function getContactTitle()
+    {
+        return $this->languageArray['CONTACT_TITLE'];
+    }
+
+    public function getContactSubTitle()
+    {
+        return $this->languageArray['CONTACT_SUBTITLE'];
+    }
+
+    public function getContactText()
+    {
+        return $this->languageArray['CONTACT_TEXT'];
+    }
+
+    public function getContactName()
+    {
+        return $this->languageArray['CONTACT_NAME'];
+    }
+
+    public function getContactEmail()
+    {
+        return $this->languageArray['CONTACT_EMAIL'];
+    }
+
+    public function getContactPhone()
+    {
+        return $this->languageArray['CONTACT_PHONE'];
+    }
+
+    public function getContactMessage()
+    {
+        return $this->languageArray['CONTACT_MESSAGE'];
+    }
+
+    public function getContactSend()
+    {
+        return $this->languageArray['CONTACT_SEND'];
+    }
 }
 ?>

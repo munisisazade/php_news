@@ -7,17 +7,17 @@
                 <span class="sr-only">Toggle navigation</span>
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="/">Blog website</a>
+            <a class="navbar-brand" href="/"><?php echo $language->getWebsiteName(); ?></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/">Home</a>
+                    <a href="/"><?php echo $language->getMenuTitle(); ?></a>
                 </li>
                 <li>
-                    <a href="/about-us/">About</a>
+                    <a href="/about-us/"><?php echo $language->getMenuAbout(); ?></a>
                 </li>
                 <?php
                     include("mysqli_connect.php");
@@ -31,7 +31,7 @@
                     }
                 ?>
                 <li>
-                    <a href="/contact/">Contact</a>
+                    <a href="/contact/"><?php echo $language->getContact(); ?></a>
                 </li>
             </ul>
         </div>
