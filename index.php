@@ -22,10 +22,11 @@
                                 }
                             }
                             else {
-                                $query = "SELECT * FROM `header` LIMIT 1";
+                                $query = "SELECT `article`.*,`translate`.* FROM `article` JOIN `translate` ON `translate`.article_id=`article`.id";
                                 $result = $mysqli->query($query);
                                 if ($result) {
                                     foreach ($result as $item) {
+                                        var_dump($item);
                                         echo '<h1>' . $item['name'] . '</h1>
                                         <hr class="small">
                                         <span class="subheading">' . $item['text'] . '</span>';
@@ -58,19 +59,37 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <?php
-                    $news_list = "SELECT * FROM `article`";
-                    $news_result = $mysqli->query($news_list);
-                    foreach ($news_result as $item) {
-                        echo '
+                    if ($_SESSION['lang'] != 'en') {
+                        $news_list = "SELECT * FROM `translate` WHERE a";
+                        $news_result = $mysqli->query($news_list);
+                        foreach ($news_result as $item) {
+                            echo '
                           <div class="post-preview">
-                                <a href="/news/'.$item['slug'].'/'.strtotime($item['publish_date']).'/">
-                                    <h2 class="post-title">'.$item['title'].'</h2>
-                                    <h3 class="post-subtitle">'.$item['sub_title'].'</h3>
+                                <a href="/news/' . $item['slug'] . '/' . strtotime($item['publish_date']) . '/">
+                                    <h2 class="post-title">' . $item['title'] . '</h2>
+                                    <h3 class="post-subtitle">' . $item['sub_title'] . '</h3>
                                 </a>
-                                <p class="post-meta">'.$language->getAuthor().' <a href="#">'.get_user_full_name($item['author_id']).'</a> on '.date('F j Y', strtotime($item['publish_date'])).'</p>
+                                <p class="post-meta">' . $language->getAuthor() . ' <a href="#">' . get_user_full_name($item['author_id']) . '</a> on ' . date('F j Y', strtotime($item['publish_date'])) . '</p>
                             </div>
                             <hr>
                         ';
+                        }
+                    }
+                    else {
+                        $news_list = "SELECT * FROM `article`";
+                        $news_result = $mysqli->query($news_list);
+                        foreach ($news_result as $item) {
+                            echo '
+                          <div class="post-preview">
+                                <a href="/news/' . $item['slug'] . '/' . strtotime($item['publish_date']) . '/">
+                                    <h2 class="post-title">' . $item['title'] . '</h2>
+                                    <h3 class="post-subtitle">' . $item['sub_title'] . '</h3>
+                                </a>
+                                <p class="post-meta">' . $language->getAuthor() . ' <a href="#">' . get_user_full_name($item['author_id']) . '</a> on ' . date('F j Y', strtotime($item['publish_date'])) . '</p>
+                            </div>
+                            <hr>
+                        ';
+                        }
                     }
                 ?>
                 <!--<div class="post-preview">
