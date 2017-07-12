@@ -23,7 +23,7 @@
                                 }
                             }
                             else {
-                                $query = "SELECT `article`.*,`translate`.* FROM `article` JOIN `translate` ON `translate`.article_id=`article`.id";
+                                $query = "SELECT * FROM article JOIN translate ON translate.article_id=article.id";
                                 $result = $mysqli->query($query);
                                 var_dump($result);
                                 if ($result) {
