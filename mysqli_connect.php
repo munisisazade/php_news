@@ -89,12 +89,12 @@
            FOREIGN KEY (`flatpage_id`) REFERENCES flatpage(`id`) ON DELETE CASCADE,
            PRIMARY KEY (`id`))";
 
-        if ($mysqli->query($translatemodel) === TRUE) {
-            echo "Successfuly Created translation model";
-        }
-        else {
-            echo "ERROR $mysqli->error";
-        }
+//        if ($mysqli->query($translatemodel) === TRUE) {
+//            echo "Successfuly Created translation model";
+//        }
+//        else {
+//            echo "ERROR $mysqli->error";
+//        }
 //        if ($mysqli->query($aditionalflat_two) === TRUE) {
 //            echo "Successfuly update flatpage2 table";
 //        }
