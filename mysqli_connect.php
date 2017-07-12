@@ -79,7 +79,6 @@
           `flatpage_id` INT(11) unsigned DEFAULT NULL,
            INDEX flatpage (`flatpage_id`),
           `name` VARCHAR (255) DEFAULT NULL,
-          `text` VARCHAR (255) DEFAULT NULL,
           `title` VARCHAR (255) DEFAULT NULL,
           `sub_title` VARCHAR (255) DEFAULT NULL,
           `text` TEXT DEFAULT NULL,
