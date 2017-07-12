@@ -6,6 +6,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
                         <?php
+                            global $mysqli;
                             if ($_SESSION['lang'] != 'en') {
                                 $query = "SELECT * FROM `translate` WHERE `header_id` IS NOT NULL LIMIT 1";
                                 $result = $mysqli->query($query);
