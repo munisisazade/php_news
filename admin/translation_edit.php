@@ -5,9 +5,9 @@
             <?php include("menu.php"); ?>
             <?php  ob_start();
             global $mysqli;
-            $edit_title = "New header add";
+            $edit_title = "New model translation";
             if ($_GET['edit']) {
-                $edit_title = "Edit header";
+                $edit_title = "Edit translation";
             }
             if(isset($_POST['change'])) {
                 $id = (int) $_POST['id'];
