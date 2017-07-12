@@ -68,12 +68,34 @@
 
         $aditionalflat_three = "ALTER TABLE  `flatpage` ADD `name` VARCHAR (255) DEFAULT NULL ";
 
-//        if ($mysqli->query($aditionalflat_three) === TRUE) {
-//            echo "Successfuly update flatpage1 table";
-//        }
-//        else {
-//            echo "ERROR $mysqli->error";
-//        }
+        $translatemodel = "CREATE TABLE `translate` (
+          `id` INT(11) unsigned NOT NULL auto_increment,
+          `header_id` INT(11) unsigned DEFAULT NULL,
+           INDEX header (`header_id`),
+          `article_id` INT(11) unsigned DEFAULT NULL,
+           INDEX article (`article_id`),
+          `about_id` INT(11) unsigned DEFAULT NULL,
+           INDEX about (`about_id`),
+          `flatpage_id` INT(11) unsigned DEFAULT NULL,
+           INDEX flatpage (`flatpage_id`),
+          `name` VARCHAR (255) DEFAULT NULL,
+          `text` VARCHAR (255) DEFAULT NULL,
+          `title` VARCHAR (255) DEFAULT NULL,
+          `sub_title` VARCHAR (255) DEFAULT NULL,
+          `text` TEXT DEFAULT NULL,
+          `lang` VARCHAR (4) DEFAULT 'az',
+           FOREIGN KEY (`header_id`) REFERENCES header(`id`) ON DELETE CASCADE,
+           FOREIGN KEY (`article_id`) REFERENCES article(`id`) ON DELETE CASCADE,
+           FOREIGN KEY (`about_id`) REFERENCES about(`id`) ON DELETE CASCADE,
+           FOREIGN KEY (`flatpage_id`) REFERENCES flatpage(`id`) ON DELETE CASCADE,
+           PRIMARY KEY (`id`))";
+
+        if ($mysqli->query($translatemodel) === TRUE) {
+            echo "Successfuly Created translation model";
+        }
+        else {
+            echo "ERROR $mysqli->error";
+        }
 //        if ($mysqli->query($aditionalflat_two) === TRUE) {
 //            echo "Successfuly update flatpage2 table";
 //        }
