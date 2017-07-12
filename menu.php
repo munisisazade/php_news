@@ -31,12 +31,23 @@
                 <?php
                     include("mysqli_connect.php");
                     global $mysqli;
-                    $flatpage_query = "SELECT * FROM `flatpage`";
-                    $result = $mysqli->query($flatpage_query);
-                    foreach ($result as $item) {
-                        echo '<li>
-                                 <a href="/page'.$item['url'].'">'.$item['name'].'</a>
+                    if ($_SESSION['lang'] != 'en') {
+                        $flatpage_query = "SELECT * FROM `flatpage` JOIN `translate` ON `translate`.flatpage_id=`flatpage`.id";
+                        $result = $mysqli->query($flatpage_query);
+                        foreach ($result as $item) {
+                            echo '<li>
+                                 <a href="/page' . $item['url'] . '">' . $item['name'] . '</a>
                               </li>';
+                        }
+                    }
+                    else {
+                        $flatpage_query = "SELECT * FROM `flatpage`";
+                        $result = $mysqli->query($flatpage_query);
+                        foreach ($result as $item) {
+                            echo '<li>
+                                 <a href="/page' . $item['url'] . '">' . $item['name'] . '</a>
+                              </li>';
+                        }
                     }
                 ?>
                 <li>
