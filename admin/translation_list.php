@@ -3,7 +3,7 @@ $message_active='active';
 include("header.php") ?>
 <?php
 if($_GET['id']){
-
+    global $mysqli;
     $query = "DELETE FROM `translate` WHERE `id`=".$_GET['id'];
 
     $mysqli->query($query);
@@ -37,7 +37,7 @@ if($_GET['id']){
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <?php
-                            $head = "SELECT * FROM `translate`";
+                            $head = "SELECT * FROM `translate` WHERE `header_id` IS NOT NULL";
                             $header_result = $mysqli->query($head);
                             if ($header_result) {
 
@@ -77,7 +77,7 @@ if($_GET['id']){
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <?php
-                            $head = "SELECT * FROM `translate`";
+                            $head = "SELECT * FROM `translate` WHERE `article_id` IS NOT NULL";
                             $header_result = $mysqli->query($head);
                             if ($header_result) {
 
@@ -115,7 +115,7 @@ if($_GET['id']){
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <?php
-                            $head = "SELECT * FROM `translate`";
+                            $head = "SELECT * FROM `translate`  WHERE `flatpage_id` IS NOT NULL";
                             $header_result = $mysqli->query($head);
                             if ($header_result) {
 
@@ -153,7 +153,7 @@ if($_GET['id']){
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <?php
-                            $head = "SELECT * FROM `translate`";
+                            $head = "SELECT * FROM `translate`  WHERE `about_id` IS NOT NULL";
                             $header_result = $mysqli->query($head);
                             if ($header_result) {
 
