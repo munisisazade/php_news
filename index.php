@@ -24,6 +24,7 @@
                             else {
                                 $query = "SELECT `article`.*,`translate`.* FROM `article` JOIN `translate` ON `translate`.article_id=`article`.id";
                                 $result = $mysqli->query($query);
+                                var_dump($result);
                                 if ($result) {
                                     foreach ($result as $item) {
                                         var_dump($item);
