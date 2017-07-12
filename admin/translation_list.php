@@ -34,6 +34,43 @@ if($_GET['id']){
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active show" id="header" aria-expanded="true">
                     <a href="header_edit.php"><button class="btn btn-success">New</button></a>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <?php
+                            $head = "SELECT * FROM `translate`";
+                            $header_result = $mysqli->query($head);
+                            if ($header_result) {
+
+                                echo '<thead>
+                            <tr>
+                                <th>#id</th>
+                                <th>name</th>
+                                <th>text</th>
+                                <th>lang</th>
+                                <th>action</th>
+                            </tr>
+                            </thead>
+                            <tbody>';
+                                foreach ($header_result as $key) {
+                                    echo '<tr><td>' . $key['id'] . '</td>
+                                <td>' . $key['name'] . '</td>
+                                <td>' . $key['text'] . '</td>
+                                <td>' . $key['lang'] . '</td>
+                                <td><a href="translation_edit.php?edit='.$key['id'].'" class="btn btn-info">
+                                        <span class="glyphicon glyphicon-edit"></span> edit
+                                    </a><a href="translation_list.php?id='.$key['id'].'" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove-sign"></span> Delete
+                                    </a></td>
+                            </tr>';
+                                }
+                                echo '</thbody>';
+                            }
+                            else {
+                                echo "No translation find";
+                            }
+                            ?>
+                        </table>
+                    </div>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="news">
                     <a href="header_edit.php"><button class="btn btn-success">New</button></a>
@@ -46,42 +83,7 @@ if($_GET['id']){
                 </div>
             </div>
 
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <?php
-                    $head = "SELECT * FROM `translate`";
-                    $header_result = $mysqli->query($head);
-                    if ($header_result) {
 
-                        echo '<thead>
-                            <tr>
-                                <th>#id</th>
-                                <th>model</th>
-                                <th>name</th>
-                                <th>language</th>
-                                <th>action</th>
-                            </tr>
-                            </thead>
-                            <tbody>';
-                        foreach ($header_result as $key) {
-                            echo '<tr><td>' . $key['id'] . '</td>
-                                <td>' . $key['title'] . '</td>
-                                <td>' . $key['sub_title'] . '</td>
-                                <td>' . $key['lang'] . '</td>
-                                <td><a href="translation_edit.php?edit='.$key['id'].'" class="btn btn-info">
-                                        <span class="glyphicon glyphicon-edit"></span> edit
-                                    </a><a href="translation_list.php?id='.$key['id'].'" class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-remove-sign"></span> Delete
-                                    </a></td>
-                            </tr>';
-                        }
-                        echo '</thbody>';
-                    }
-                    else {
-                        echo "No translation find";
-                    }
-                    ?>
-                </table>
         </main>
     </div>
 </div>
