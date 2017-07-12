@@ -6,19 +6,35 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
                         <?php
-                            $query = "SELECT * FROM `header` LIMIT 1";
-                            $result = $mysqli->query($query);
-                            if ($result) {
-                                foreach ($result as $item) {
-                                    echo '<h1>'.$item['name'].'</h1>
-                                    <hr class="small">
-                                    <span class="subheading">'.$item['text'].'</span>';
+                            if ($_SESSION['lang'] != 'en') {
+                                $query = "SELECT * FROM `translate` WHERE `header_id` IS NOT NULL LIMIT 1";
+                                $result = $mysqli->query($query);
+                                if ($result) {
+                                    foreach ($result as $item) {
+                                        echo '<h1>' . $item['name'] . '</h1>
+                                        <hr class="small">
+                                        <span class="subheading">' . $item['text'] . '</span>';
+                                    }
+                                } else {
+                                    echo '<h1>Blogs</h1>
+                                        <hr class="small">
+                                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>';
                                 }
                             }
                             else {
-                                echo '<h1>Blogs</h1>
-                                    <hr class="small">
-                                    <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>';
+                                $query = "SELECT * FROM `header` LIMIT 1";
+                                $result = $mysqli->query($query);
+                                if ($result) {
+                                    foreach ($result as $item) {
+                                        echo '<h1>' . $item['name'] . '</h1>
+                                        <hr class="small">
+                                        <span class="subheading">' . $item['text'] . '</span>';
+                                    }
+                                } else {
+                                    echo '<h1>Blogs</h1>
+                                        <hr class="small">
+                                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>';
+                                }
                             }
                             function get_user_full_name($user) {
                                 $id = (int) $user;
