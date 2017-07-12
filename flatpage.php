@@ -4,16 +4,30 @@
 
         global $mysqli;
         $base_url = check_input($_GET['base_url']);
+        if ($_SESSION['lang'] != 'en') {
+            $flat_query = "SELECT * FROM `flatpage` JOIN `translate` ON `translate`.flatpage_id=`flatpage`.id WHERE `url` LIKE '%" . $base_url . "%'";
 
-        $flat_query = "SELECT * FROM `flatpage` WHERE `url` LIKE '%".$base_url."%'";
+            $result = $mysqli->query($flat_query);
+            function get_data()
+            {
+                global $result;
+                foreach ($result as $key) {
+                    return $key;
+                }
+            };
+        }
+        else {
+            $flat_query = "SELECT * FROM `flatpage` WHERE `url` LIKE '%" . $base_url . "%'";
 
-        $result = $mysqli->query($flat_query);
-        function get_data() {
-            global $result;
-            foreach ($result as $key) {
-                return $key;
-            }
-        };
+            $result = $mysqli->query($flat_query);
+            function get_data()
+            {
+                global $result;
+                foreach ($result as $key) {
+                    return $key;
+                }
+            };
+        }
         $data = get_data();
     }
     function check_input($data){
