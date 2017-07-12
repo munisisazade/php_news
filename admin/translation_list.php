@@ -16,7 +16,36 @@ if($_GET['id']){
     <div class="row">
         <?php include("menu.php"); ?>
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-            <h1>Messages</h1>
+            <h1>Translation</h1>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#header" role="tab" data-toggle="tab">Headers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#news" role="tab" data-toggle="tab">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#flatpages" role="tab" data-toggle="tab">Flatpages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" role="tab" data-toggle="tab">About</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active show" id="header" aria-expanded="true">
+                    <a href="header_edit.php"><button class="btn btn-success">New</button></a>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="news">
+                    <a href="header_edit.php"><button class="btn btn-success">New</button></a>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="flatpages">
+                    <a href="header_edit.php"><button class="btn btn-success">New</button></a>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="about">
+                    <a href="header_edit.php"><button class="btn btn-success">New</button></a>
+                </div>
+            </div>
+
             <div class="table-responsive">
                 <table class="table table-striped">
                     <?php

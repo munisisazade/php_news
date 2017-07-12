@@ -68,14 +68,22 @@
                             <option value="about">About</option>
                             <option value="flatpage">Flatpage</option>
                         </select>
-//                        
                         <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">text</label>
+                        <label for="exampleInputEmail1">name</label>
                         <input type="text" name="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
                         <small id="emailHelp" class="form-text text-muted"></small>
-                    </div>';
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Language</label>
+                        <select class="form-control" name="" id="">
+                            <option value="header">az</option>
+                        </select>
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    
+                    ';
                     }
                     ?>
 
