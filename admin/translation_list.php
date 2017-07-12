@@ -1,5 +1,5 @@
 <?php
-$message_active='active';
+$translation_class='active';
 include("header.php") ?>
 <?php
 if($_GET['id']){

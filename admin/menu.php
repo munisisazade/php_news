@@ -16,6 +16,9 @@
             <a class="nav-link <?php echo $about_me ?>" href="about_list.php">About me</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link <?php echo $translation_class ?>" href="translation_list.php">Translation</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link <?php echo $message_active ?>" href="message_list.php">Messages</a>
         </li>
 
