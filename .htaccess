@@ -2,6 +2,7 @@
  RewriteEngine On
  #RewriteRule ^.*$ index.php
  #RewriteRule
+ RewriteRule ^/([^/]+)/([^/]+)  $2?lang=$1 [L]
  RewriteRule ^about-us/ about.php
  RewriteRule ^contact/ contact.php
  RewriteRule ^news/([^/]+)/? post.php?post_slug=$1 [L]
