@@ -33,7 +33,7 @@ if($_GET['id']){
             </ul>
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active show" id="header" aria-expanded="true">
-                    <a href="header_edit.php"><button class="btn btn-success">New</button></a>
+                    <a href="translation_edit.php?create_header=true"><button class="btn btn-success">New</button></a>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <?php
@@ -73,13 +73,120 @@ if($_GET['id']){
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="news">
-                    <a href="header_edit.php"><button class="btn btn-success">New</button></a>
+                    <a href="translation_edit.php?create_news=true"><button class="btn btn-success">New</button></a>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <?php
+                            $head = "SELECT * FROM `translate`";
+                            $header_result = $mysqli->query($head);
+                            if ($header_result) {
+
+                                echo '<thead>
+                            <tr>
+                                <th>#id</th>
+                                <th>title</th>
+                                <th>lang</th>
+                                <th>action</th>
+                            </tr>
+                            </thead>
+                            <tbody>';
+                                foreach ($header_result as $key) {
+                                    echo '<tr><td>' . $key['id'] . '</td>
+                                <td>' . $key['title'] . '</td>
+                                <td>' . $key['lang'] . '</td>
+                                <td><a href="translation_edit.php?edit='.$key['id'].'" class="btn btn-info">
+                                        <span class="glyphicon glyphicon-edit"></span> edit
+                                    </a><a href="translation_list.php?id='.$key['id'].'" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove-sign"></span> Delete
+                                    </a></td>
+                            </tr>';
+                                }
+                                echo '</thbody>';
+                            }
+                            else {
+                                echo "No translation find";
+                            }
+                            ?>
+                        </table>
+                    </div>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="flatpages">
-                    <a href="header_edit.php"><button class="btn btn-success">New</button></a>
+                    <a href="translation_edit.php?create_flatpage=true"><button class="btn btn-success">New</button></a>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <?php
+                            $head = "SELECT * FROM `translate`";
+                            $header_result = $mysqli->query($head);
+                            if ($header_result) {
+
+                                echo '<thead>
+                            <tr>
+                                <th>#id</th>
+                                <th>name</th>
+                                <th>lang</th>
+                                <th>action</th>
+                            </tr>
+                            </thead>
+                            <tbody>';
+                                foreach ($header_result as $key) {
+                                    echo '<tr><td>' . $key['id'] . '</td>
+                                <td>' . $key['name'] . '</td>
+                                <td>' . $key['lang'] . '</td>
+                                <td><a href="translation_edit.php?edit='.$key['id'].'" class="btn btn-info">
+                                        <span class="glyphicon glyphicon-edit"></span> edit
+                                    </a><a href="translation_list.php?id='.$key['id'].'" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove-sign"></span> Delete
+                                    </a></td>
+                            </tr>';
+                                }
+                                echo '</thbody>';
+                            }
+                            else {
+                                echo "No translation find";
+                            }
+                            ?>
+                        </table>
+                    </div>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="about">
-                    <a href="header_edit.php"><button class="btn btn-success">New</button></a>
+                    <a href="translation_edit.php?create_about=true"><button class="btn btn-success">New</button></a>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <?php
+                            $head = "SELECT * FROM `translate`";
+                            $header_result = $mysqli->query($head);
+                            if ($header_result) {
+
+                                echo '<thead>
+                            <tr>
+                                <th>#id</th>
+                                <th>title</th>
+                                <th>sub_title</th>
+                                <th>lang</th>
+                                <th>action</th>
+                            </tr>
+                            </thead>
+                            <tbody>';
+                                foreach ($header_result as $key) {
+                                    echo '<tr><td>' . $key['id'] . '</td>
+                                <td>' . $key['title'] . '</td>
+                                <td>' . $key['sub_title'] . '</td>
+                                <td>' . $key['lang'] . '</td>
+                                <td><a href="translation_edit.php?edit='.$key['id'].'" class="btn btn-info">
+                                        <span class="glyphicon glyphicon-edit"></span> edit
+                                    </a><a href="translation_list.php?id='.$key['id'].'" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove-sign"></span> Delete
+                                    </a></td>
+                            </tr>';
+                                }
+                                echo '</thbody>';
+                            }
+                            else {
+                                echo "No translation find";
+                            }
+                            ?>
+                        </table>
+                    </div>
                 </div>
             </div>
 
