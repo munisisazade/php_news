@@ -1,13 +1,28 @@
 <?php include("header.php"); ?>
 <?php include("menu.php");
-$get_post = "SELECT * FROM `about`";
-$result = $mysqli->query($get_post);
-function get_data() {
-    global $result;
-    foreach ($result as $key) {
-        return $key;
-    }
-};
+global $mysqli;
+if ($_SESSION['lang'] != 'en') {
+    $get_post = "SELECT * FROM `about` JOIN `translate` ON `translate`.about_id=`about`.id";
+    $result = $mysqli->query($get_post);
+    function get_data()
+    {
+        global $result;
+        foreach ($result as $key) {
+            return $key;
+        }
+    };
+}
+else {
+    $get_post = "SELECT * FROM `about`";
+    $result = $mysqli->query($get_post);
+    function get_data()
+    {
+        global $result;
+        foreach ($result as $key) {
+            return $key;
+        }
+    };
+}
 $data = get_data();
 
 ?>
