@@ -6,7 +6,6 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
                         <?php
-                            global $mysqli;
                             if ($_SESSION['lang'] != 'en') {
                                 $query = "SELECT * FROM `translate` WHERE `header_id` IS NOT NULL LIMIT 1";
                                 $result = $mysqli->query($query);
@@ -23,12 +22,10 @@
                                 }
                             }
                             else {
-                                $query = "SELECT * FROM article JOIN translate ON translate.article_id=article.id";
+                                $query = "SELECT * FROM `header` LIMIT 1";
                                 $result = $mysqli->query($query);
-                                var_dump($result);
                                 if ($result) {
                                     foreach ($result as $item) {
-                                        var_dump($item);
                                         echo '<h1>' . $item['name'] . '</h1>
                                         <hr class="small">
                                         <span class="subheading">' . $item['text'] . '</span>';
@@ -62,7 +59,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <?php
                     if ($_SESSION['lang'] != 'en') {
-                        $news_list = "SELECT * FROM `translate` WHERE a";
+                        $news_list = "SELECT * FROM article JOIN translate ON translate.article_id=article.id";
                         $news_result = $mysqli->query($news_list);
                         foreach ($news_result as $item) {
                             echo '
