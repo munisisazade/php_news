@@ -10,15 +10,17 @@
                 $edit_title = "Edit header";
             }
             if(isset($_POST['change'])) {
-                $id = (int)$_POST['id'];
+                $id = (int) $_POST['id'];
                 $name = check_input($_POST['name']);
                 $text = check_input($_POST['text']);
+
                 if ($id) {
-                    $edit_query = "UPDATE `header` SET `name`='" . $name . "' , `text`='" . $text . "' WHERE `id`=" . $id . "";
+                    $edit_query = "UPDATE `header` SET `name`='".$name."' , `text`='".$text."' WHERE `id`=".$id."";
                     $mysqli->query($edit_query);
                     get_list();
-                } else {
-                    $edit_query = "INSERT INTO `header`(`name`,`text`) VALUES ('" . $name . "','" . $text . "')";
+                }
+                else {
+                    $edit_query = "INSERT INTO `header`(`name`,`text`) VALUES ('".$name."','".$text."')";
                     $res = $mysqli->query($edit_query);
                     get_list();
                 }
