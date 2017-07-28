@@ -10,7 +10,6 @@
  RewriteRule ^page/([^/]+)/ flatpage.php?base_url=$1 [L]
  RewriteCond %{REQUEST_FILENAME} !-f
  RewriteCond %{REQUEST_FILENAME} !-d
- RewriteRule ^([^/]+)/([^/]+)/?  $2?lang=$1 [L,NC]
  #RewriteRule . /index.php [L]
  
 </IfModule>
