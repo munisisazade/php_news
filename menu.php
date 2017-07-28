@@ -26,7 +26,7 @@
                     <a href="/"><?php echo $language->getMenuTitle(); ?></a>
                 </li>
                 <li>
-                    <a href="/about-us/"><?php echo $language->getMenuAbout(); ?></a>
+                    <a href="/<?php echo $_SESSION['lang']; ?>/about-us/"><?php echo $language->getMenuAbout(); ?></a>
                 </li>
                 <?php
                     include("mysqli_connect.php");
@@ -36,7 +36,7 @@
                         $result = $mysqli->query($flatpage_query);
                         foreach ($result as $item) {
                             echo '<li>
-                                 <a href="/page' . $item['url'] . '">' . $item['name'] . '</a>
+                                 <a href="/'. $_SESSION['lang'] .'/page' . $item['url'] . '">' . $item['name'] . '</a>
                               </li>';
                         }
                     }
@@ -51,7 +51,7 @@
                     }
                 ?>
                 <li>
-                    <a href="/contact/"><?php echo $language->getContact(); ?></a>
+                    <a href="/<?php echo $_SESSION['lang']; ?>/contact/"><?php echo $language->getContact(); ?></a>
                 </li>
             </ul>
         </div>
