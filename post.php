@@ -7,7 +7,7 @@ if($_GET['post_slug']) {
     }
     else {
         $get_post = "SELECT * FROM `article` WHERE `slug`='" . $_GET['post_slug'] . "'";
-        var_dump($get_post);
+
     }
     $result = $mysqli->query($get_post);
     function get_data() {
