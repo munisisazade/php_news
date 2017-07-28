@@ -1,4 +1,4 @@
-﻿<?php include("header.php"); ?>
+﻿<?php include("header.php"); var_dump("menu.php"); ?>
 <?php include("menu.php"); var_dump("menu.php");?>
     <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
         <div class="container">
