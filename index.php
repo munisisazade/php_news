@@ -1,4 +1,4 @@
-﻿<?php include("header.php"); ?>
+﻿<?php require("header.php"); ?>
 <?php include("menu.php"); ?>
     <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
         <div class="container">
