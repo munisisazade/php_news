@@ -80,7 +80,7 @@
                         foreach ($news_result as $item) {
                             echo '
                           <div class="post-preview">
-                                <a href="/news/' . $item['slug'] . '/' . strtotime($item['publish_date']) . '/">
+                                <a href="/'. $_SESSION['lang'] .'/news/' . $item['slug'] . '/' . strtotime($item['publish_date']) . '/">
                                     <h2 class="post-title">' . $item['title'] . '</h2>
                                     <h3 class="post-subtitle">' . $item['sub_title'] . '</h3>
                                 </a>
