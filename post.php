@@ -2,7 +2,7 @@
 <?php
 if($_GET['post_slug']) {
 //        echo $_GET['post_id'];
-    if ($_SESSION['lang'] != 'en') {
+    if ($_GET['lang'] != 'en') {
         $get_post = "SELECT * FROM `article` JOIN translate ON translate.article_id=article.id WHERE `slug`='" . $_GET['post_slug'] . "'";
     }
     else {
