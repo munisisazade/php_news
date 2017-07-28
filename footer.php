@@ -1,7 +1,6 @@
         <!-- Footer -->
 
         <?php
-        include('mysqli_connect.php');
         $link = "SELECT * FROM `about`";
         $result = $mysqli->query($link);
         function social_link() {
