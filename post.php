@@ -2,7 +2,7 @@
 <?php
 if($_GET['post_slug']) {
 //        echo $_GET['post_id'];
-    $get_post = "SELECT * FROM `article` WHERE `slug`='".$_GET['post_slug']."'";
+    $get_post = "SELECT * FROM `article` JOIN translate ON translate.article_id=article.id WHERE `slug`='".$_GET['post_slug']."'";
     $result = $mysqli->query($get_post);
     function get_data() {
         global $result;
