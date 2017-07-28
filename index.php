@@ -1,5 +1,5 @@
 ﻿<?php include("header.php"); ?>
-<?php include("menu.php"); print_r("menu.php");?>
+<?php include("menu.php"); var_dump("menu.php");?>
     <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
         <div class="container">
             <div class="row">
