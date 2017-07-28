@@ -18,8 +18,8 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="<?php change_language("az"); ?>">az</a></li>
-                        <li><a href="<?php change_language("en"); ?>">en</a></li>
+<!--                        <li><a href="--><?php //change_language("az"); ?><!--">az</a></li>-->
+<!--                        <li><a href="--><?php //change_language("en"); ?><!--">en</a></li>-->
                     </ul>
                 </li>
                 <li>

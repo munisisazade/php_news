@@ -111,12 +111,12 @@
  //       }
 
     }
-        function change_language($lang) {
-            if ($_SERVER['REQUEST_URI'] != "/") {
-                echo str_replace("/".$_SESSION['lang']."/","/".$lang."/",$_SERVER['REQUEST_URI']);
-            }
-            else {
-                echo "/".$lang."/";
-            }
-        }
+//        function change_language($lang) {
+//            if ($_SERVER['REQUEST_URI'] != "/") {
+//                echo str_replace("/".$_SESSION['lang']."/","/".$lang."/",$_SERVER['REQUEST_URI']);
+//            }
+//            else {
+//                echo "/".$lang."/";
+//            }
+//        }
 ?>
