@@ -45,7 +45,7 @@
                         $result = $mysqli->query($flatpage_query);
                         foreach ($result as $item) {
                             echo '<li>
-                                 <a href="/page' . $item['url'] . '">' . $item['name'] . '</a>
+                                 <a href="/'. $_SESSION['lang'] .'/page' . $item['url'] . '">' . $item['name'] . '</a>
                               </li>';
                         }
                     }
