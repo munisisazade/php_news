@@ -3,6 +3,7 @@
  #RewriteRule ^.*$ index.php
  #RewriteRule
 
+ RewriteRule ^(az|en)/$ index.php?lang=$1 [L]
  RewriteRule ^about-us/ about.php
  RewriteRule ^contact/ contact.php
  RewriteRule ^news/([^/]+)/ post.php?post_slug=$1 [L]
